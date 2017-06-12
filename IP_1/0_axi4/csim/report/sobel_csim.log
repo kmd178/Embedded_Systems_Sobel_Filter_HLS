@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../testbench.c in release mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2017.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'kmd17' on host 'desktop-h6kou0k' (Windows NT_amd64 version 6.2) on Sun Jun 11 23:47:17 +0300 2017
+INFO: [HLS 200-10] In directory 'C:/Embedded_Systems_Sobel_Filter_HLS/IP_1/0_axi4/csim/build'
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../IP_1st_restructure.c in release mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2017.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'kmd17' on host 'desktop-h6kou0k' (Windows NT_amd64 version 6.2) on Sun Jun 11 23:47:21 +0300 2017
+INFO: [HLS 200-10] In directory 'C:/Embedded_Systems_Sobel_Filter_HLS/IP_1/0_axi4/csim/build'
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+---SOBEL FILTER IS PRODUCING THE EXPECTED OUTPUT---
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

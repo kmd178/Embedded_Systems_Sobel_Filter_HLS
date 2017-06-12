@@ -1,0 +1,25 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <config>
+        <schedule model="sobel"/>
+    </config>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
+    <name>
+        <value string="3.1_pipeline"/>
+    </name>
+    <project>
+        <value string="IP_3.0"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7z020:clg484:-1"/>
+    </targetInfo>
+    <libraryList>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq_fpv6"/>
+    </libraryList>
+    <clockList>
+        <clock default="false" name="default" period="10"/>
+    </clockList>
+</AutoPilot:solution>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'sobel/output' to 'sobel/output_r' to avoid the conflict with HDL keywords or other object names." projectName="IP_2.1" solutionName="2.1_arbitrary_precision" date="2017-06-12T03:01:32.987+0300" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'sobel/input' to 'sobel/input_r' to avoid the conflict with HDL keywords or other object names." projectName="IP_2.1" solutionName="2.1_arbitrary_precision" date="2017-06-12T03:01:32.941+0300" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] No C:/Embedded_Systems_Sobel_Filter_HLS/IP_2.1/IP/IP.aps file found." projectName="IP_2.1" solutionName="2.1_arbitrary_precision" date="2017-06-12T03:00:58.907+0300" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

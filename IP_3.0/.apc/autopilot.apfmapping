@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="IP_3.0_unrolling_and_pipelining.c" path="C:\Embedded_Systems_Sobel_Filter_HLS\IP_3.0_unrolling_and_pipelining.c"/>
+  </source>
+  <testbench>
+    <originFiles name="golden.grey" path="C:\Embedded_Systems_Sobel_Filter_HLS\golden.grey"/>
+    <originFiles name="input.grey" path="C:\Embedded_Systems_Sobel_Filter_HLS\input.grey"/>
+    <originFiles name="testbench.c" path="C:\Embedded_Systems_Sobel_Filter_HLS\testbench.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

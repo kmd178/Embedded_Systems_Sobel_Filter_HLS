@@ -1,0 +1,11 @@
+sobel_mul_8ns_32sbkb
+sobel_sitodp_32nsdEe
+sobel_dsqrt_64ns_eOg
+sobel_mul_32s_32sfYi
+sobel_horiz_operacud
+sobel_vert_operator
+sobel_AXILiteS_s_axi
+sobel_INPUT_BUNDLE_m_axi
+sobel_OUTPUT_BUNDLE_m_axi
+convolution2D
+sobel

@@ -1,0 +1,1512 @@
+
+
+================================================================
+== Vivado HLS Report for 'sobel'
+================================================================
+* Date:           Mon Jun 12 03:01:33 2017
+
+* Version:        2017.1 (Build 1846317 on Fri Apr 14 19:19:38 MDT 2017)
+* Project:        IP_2.1
+* Solution:       2.1_arbitrary_precision
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+----------+----------+----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |    min   |    max   |    min   |    max   |   Type  |
+    +----------+----------+----------+----------+---------+
+    |  67893505|  67893505|  67893506|  67893506|   none  |
+    +----------+----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+        |             |       Latency       | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |    min   |    max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  67893504|  67893504|     66432|          -|          -|  1022|    no    |
+        | + Loop 1.1  |     66430|     66430|        65|          -|          -|  1022|    no    |
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 73
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	4  / (!tmp_6)
+	2  / (tmp_6)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / (!icmp)
+	68  / (icmp)
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	3  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	67  / true
+* FSM state operations: 
+
+ <State 1>: 1.77ns
+ST_1: StgValue_74 (5)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i8* %OUTPUT_BUNDLE), !map !467
+
+ST_1: StgValue_75 (6)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i8* %INPUT_BUNDLE), !map !473
+
+ST_1: StgValue_76 (7)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @sobel_str) nounwind
+
+ST_1: output_read (8)  [1/1] 1.00ns
+:3  %output_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %output_r)
+
+ST_1: input_read (9)  [1/1] 1.00ns
+:4  %input_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_r)
+
+ST_1: StgValue_79 (10)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:9
+:5  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_80 (11)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecInterface(i8* %INPUT_BUNDLE, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 1048576, [13 x i8]* @p_str3, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_1: StgValue_81 (12)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface(i32 %input_r, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 1048576, [1 x i8]* @bundle, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_1: StgValue_82 (13)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface(i8* %OUTPUT_BUNDLE, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 1048576, [14 x i8]* @p_str5, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_1: StgValue_83 (14)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecInterface(i32 %output_r, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 1048576, [1 x i8]* @bundle4, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+ST_1: StgValue_84 (15)  [1/1] 1.77ns  loc: IP_2.1_arbitrary_precision.c:21
+:10  br label %1
+
+
+ <State 2>: 3.08ns
+ST_2: j (17)  [1/1] 0.00ns
+:0  %j = phi i10 [ 1, %0 ], [ %j_1, %6 ]
+
+ST_2: tmp (18)  [1/1] 3.02ns  loc: IP_2.1_arbitrary_precision.c:21
+:1  %tmp = icmp eq i10 %j, -1
+
+ST_2: empty (19)  [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1022, i64 1022, i64 1022) nounwind
+
+ST_2: StgValue_88 (20)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:3  br i1 %tmp, label %7, label %.preheader.preheader
+
+ST_2: tmp_2 (22)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+.preheader.preheader:0  %tmp_2 = call i20 @_ssdm_op_BitConcatenate.i20.i10.i10(i10 %j, i10 0)
+
+ST_2: tmp_3 (23)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+.preheader.preheader:1  %tmp_3 = or i20 %tmp_2, 1
+
+ST_2: tmp_3_cast (24)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+.preheader.preheader:2  %tmp_3_cast = zext i20 %tmp_3 to i21
+
+ST_2: tmp_4 (25)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:30
+.preheader.preheader:3  %tmp_4 = add i20 %tmp_2, 1024
+
+ST_2: tmp_5 (26)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:30
+.preheader.preheader:4  %tmp_5 = add i20 %tmp_2, -1024
+
+ST_2: StgValue_94 (27)  [1/1] 1.77ns  loc: IP_2.1_arbitrary_precision.c:22
+.preheader.preheader:5  br label %.preheader
+
+ST_2: StgValue_95 (170)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:49
+:0  ret void
+
+
+ <State 3>: 6.52ns
+ST_3: i (29)  [1/1] 0.00ns
+.preheader:0  %i = phi i10 [ %i_1, %5 ], [ 1, %.preheader.preheader ]
+
+ST_3: tmp_6 (30)  [1/1] 3.02ns  loc: IP_2.1_arbitrary_precision.c:22
+.preheader:1  %tmp_6 = icmp eq i10 %i, -1
+
+ST_3: empty_12 (31)  [1/1] 0.00ns
+.preheader:2  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1022, i64 1022, i64 1022) nounwind
+
+ST_3: StgValue_99 (32)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:22
+.preheader:3  br i1 %tmp_6, label %6, label %2
+
+ST_3: tmp_8_cast5 (34)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:22
+:0  %tmp_8_cast5 = zext i10 %i to i21
+
+ST_3: tmp_s (35)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:1  %tmp_s = call i20 @_ssdm_op_BitConcatenate.i20.i10.i10(i10 %j, i10 %i)
+
+ST_3: tmp_9_cast (37)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:3  %tmp_9_cast = zext i20 %tmp_s to i21
+
+ST_3: sum2 (38)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:21
+:4  %sum2 = add i21 -1025, %tmp_9_cast
+
+ST_3: sum2_cast (39)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:5  %sum2_cast = sext i21 %sum2 to i32
+
+ST_3: input2_sum (40)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:21
+:6  %input2_sum = add i32 %sum2_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr (41)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:7  %INPUT_BUNDLE_addr = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum
+
+ST_3: tmp1 (45)  [1/1] 2.84ns  loc: IP_2.1_arbitrary_precision.c:22
+:11  %tmp1 = add i10 -1, %i
+
+ST_3: sum4 (46)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:12  %sum4 = call i20 @_ssdm_op_BitConcatenate.i20.i10.i10(i10 %j, i10 %tmp1)
+
+ST_3: sum4_cast (47)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:13  %sum4_cast = zext i20 %sum4 to i32
+
+ST_3: input2_sum5 (48)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:21
+:14  %input2_sum5 = add i32 %sum4_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr_1 (49)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:15  %INPUT_BUNDLE_addr_1 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum5
+
+ST_3: sum6 (54)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:21
+:20  %sum6 = add i21 1023, %tmp_9_cast
+
+ST_3: sum6_cast (55)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:21  %sum6_cast = zext i21 %sum6 to i32
+
+ST_3: input2_sum6 (56)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:21
+:22  %input2_sum6 = add i32 %sum6_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr_2 (57)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:23  %INPUT_BUNDLE_addr_2 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum6
+
+ST_3: sum8 (61)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:21
+:27  %sum8 = add i21 -1023, %tmp_9_cast
+
+ST_3: sum8_cast (62)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:28  %sum8_cast = sext i21 %sum8 to i32
+
+ST_3: input2_sum7 (63)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:21
+:29  %input2_sum7 = add i32 %sum8_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr_3 (64)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:30  %INPUT_BUNDLE_addr_3 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum7
+
+ST_3: sum3 (69)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:23
+:35  %sum3 = add i21 %tmp_3_cast, %tmp_8_cast5
+
+ST_3: sum3_cast (70)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:36  %sum3_cast = zext i21 %sum3 to i32
+
+ST_3: input2_sum8 (71)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:23
+:37  %input2_sum8 = add i32 %sum3_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr_4 (72)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:38  %INPUT_BUNDLE_addr_4 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum8
+
+ST_3: sum5 (77)  [1/1] 3.08ns  loc: IP_2.1_arbitrary_precision.c:21
+:43  %sum5 = add i21 1025, %tmp_9_cast
+
+ST_3: sum5_cast (78)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:44  %sum5_cast = zext i21 %sum5 to i32
+
+ST_3: input2_sum9 (79)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:21
+:45  %input2_sum9 = add i32 %sum5_cast, %input_read
+
+ST_3: INPUT_BUNDLE_addr_5 (80)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:46  %INPUT_BUNDLE_addr_5 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum9
+
+ST_3: tmp_11 (92)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:58  %tmp_11 = call i10 @_ssdm_op_PartSelect.i10.i20.i32.i32(i20 %tmp_4, i32 10, i32 19)
+
+ST_3: tmp_12 (93)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:59  %tmp_12 = call i20 @_ssdm_op_BitConcatenate.i20.i10.i10(i10 %tmp_11, i10 %i)
+
+ST_3: tmp_13 (94)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:60  %tmp_13 = zext i20 %tmp_12 to i32
+
+ST_3: input2_sum1 (95)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:30
+:61  %input2_sum1 = add i32 %tmp_13, %input_read
+
+ST_3: INPUT_BUNDLE_addr_6 (96)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:62  %INPUT_BUNDLE_addr_6 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum1
+
+ST_3: tmp_15 (101)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:67  %tmp_15 = call i10 @_ssdm_op_PartSelect.i10.i20.i32.i32(i20 %tmp_5, i32 10, i32 19)
+
+ST_3: tmp_16 (102)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:68  %tmp_16 = call i20 @_ssdm_op_BitConcatenate.i20.i10.i10(i10 %tmp_15, i10 %i)
+
+ST_3: tmp_17 (103)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:69  %tmp_17 = zext i20 %tmp_16 to i32
+
+ST_3: input2_sum2 (104)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:30
+:70  %input2_sum2 = add i32 %tmp_17, %input_read
+
+ST_3: INPUT_BUNDLE_addr_7 (105)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:71  %INPUT_BUNDLE_addr_7 = getelementptr i8* %INPUT_BUNDLE, i32 %input2_sum2
+
+ST_3: j_1 (167)  [1/1] 2.84ns  loc: IP_2.1_arbitrary_precision.c:21
+:0  %j_1 = add i10 %j, 1
+
+ST_3: StgValue_139 (168)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:21
+:1  br label %1
+
+
+ <State 4>: 8.75ns
+ST_4: INPUT_BUNDLE_load_re (42)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+
+ <State 5>: 8.75ns
+ST_5: INPUT_BUNDLE_load_re (42)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_5: INPUT_BUNDLE_load_1_s (50)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+
+ <State 6>: 8.75ns
+ST_6: INPUT_BUNDLE_load_re (42)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_6: INPUT_BUNDLE_load_1_s (50)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_6: INPUT_BUNDLE_load_2_s (58)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+
+ <State 7>: 8.75ns
+ST_7: INPUT_BUNDLE_load_re (42)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_7: INPUT_BUNDLE_load_1_s (50)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_7: INPUT_BUNDLE_load_2_s (58)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_7: INPUT_BUNDLE_load_3_s (65)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+
+ <State 8>: 8.75ns
+ST_8: INPUT_BUNDLE_load_re (42)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_8: INPUT_BUNDLE_load_1_s (50)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_8: INPUT_BUNDLE_load_2_s (58)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_8: INPUT_BUNDLE_load_3_s (65)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_8: INPUT_BUNDLE_load_4_s (73)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+
+ <State 9>: 8.75ns
+ST_9: INPUT_BUNDLE_load_re (42)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_9: INPUT_BUNDLE_load_1_s (50)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_9: INPUT_BUNDLE_load_2_s (58)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_9: INPUT_BUNDLE_load_3_s (65)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_9: INPUT_BUNDLE_load_4_s (73)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_9: INPUT_BUNDLE_load_5_s (81)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+
+ <State 10>: 8.75ns
+ST_10: INPUT_BUNDLE_load_re (42)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:8  %INPUT_BUNDLE_load_re = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr, i32 1)
+
+ST_10: INPUT_BUNDLE_load_1_s (50)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_10: INPUT_BUNDLE_load_2_s (58)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_10: INPUT_BUNDLE_load_3_s (65)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_10: INPUT_BUNDLE_load_4_s (73)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_10: INPUT_BUNDLE_load_5_s (81)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_10: INPUT_BUNDLE_load_6_s (97)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+
+ <State 11>: 8.75ns
+ST_11: INPUT_BUNDLE_addr_re (43)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:9  %INPUT_BUNDLE_addr_re = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr)
+
+ST_11: INPUT_BUNDLE_load_1_s (50)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:16  %INPUT_BUNDLE_load_1_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1, i32 1)
+
+ST_11: INPUT_BUNDLE_load_2_s (58)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_11: INPUT_BUNDLE_load_3_s (65)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_11: INPUT_BUNDLE_load_4_s (73)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_11: INPUT_BUNDLE_load_5_s (81)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_11: INPUT_BUNDLE_load_6_s (97)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_11: INPUT_BUNDLE_load_7_s (106)  [7/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+
+ <State 12>: 8.75ns
+ST_12: INPUT_BUNDLE_addr_1_s (51)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:17  %INPUT_BUNDLE_addr_1_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_1)
+
+ST_12: INPUT_BUNDLE_load_2_s (58)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:24  %INPUT_BUNDLE_load_2_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2, i32 1)
+
+ST_12: INPUT_BUNDLE_load_3_s (65)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_12: INPUT_BUNDLE_load_4_s (73)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_12: INPUT_BUNDLE_load_5_s (81)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_12: INPUT_BUNDLE_load_6_s (97)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_12: INPUT_BUNDLE_load_7_s (106)  [6/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+
+ <State 13>: 8.75ns
+ST_13: INPUT_BUNDLE_addr_2_s (59)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:25  %INPUT_BUNDLE_addr_2_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_2)
+
+ST_13: INPUT_BUNDLE_load_3_s (65)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:31  %INPUT_BUNDLE_load_3_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3, i32 1)
+
+ST_13: INPUT_BUNDLE_load_4_s (73)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_13: INPUT_BUNDLE_load_5_s (81)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_13: INPUT_BUNDLE_load_6_s (97)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_13: INPUT_BUNDLE_load_7_s (106)  [5/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+
+ <State 14>: 8.75ns
+ST_14: tmp_7_cast (44)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:10  %tmp_7_cast = zext i8 %INPUT_BUNDLE_addr_re to i9
+
+ST_14: tmp_1 (52)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:18  %tmp_1 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %INPUT_BUNDLE_addr_1_s, i1 false)
+
+ST_14: tmp_12_cast (53)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:19  %tmp_12_cast = zext i9 %tmp_1 to i10
+
+ST_14: tmp_13_cast (60)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:26  %tmp_13_cast = zext i8 %INPUT_BUNDLE_addr_2_s to i9
+
+ST_14: INPUT_BUNDLE_addr_3_s (66)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:32  %INPUT_BUNDLE_addr_3_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_3)
+
+ST_14: INPUT_BUNDLE_load_4_s (73)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:39  %INPUT_BUNDLE_load_4_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4, i32 1)
+
+ST_14: INPUT_BUNDLE_load_5_s (81)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_14: tmp2 (84)  [1/1] 2.80ns  loc: IP_2.1_arbitrary_precision.c:23
+:50  %tmp2 = add i9 %tmp_7_cast, %tmp_13_cast
+
+ST_14: tmp2_cast (85)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:51  %tmp2_cast = zext i9 %tmp2 to i10
+
+ST_14: sum1 (86)  [1/1] 2.82ns  loc: IP_2.1_arbitrary_precision.c:23
+:52  %sum1 = add i10 %tmp2_cast, %tmp_12_cast
+
+ST_14: INPUT_BUNDLE_load_6_s (97)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_14: INPUT_BUNDLE_load_7_s (106)  [4/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+ST_14: sum5_neg (110)  [1/1] 2.80ns  loc: IP_2.1_arbitrary_precision.c:30
+:76  %sum5_neg = sub i9 %tmp_7_cast, %tmp_13_cast
+
+
+ <State 15>: 8.75ns
+ST_15: INPUT_BUNDLE_addr_4_s (74)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:40  %INPUT_BUNDLE_addr_4_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_4)
+
+ST_15: INPUT_BUNDLE_load_5_s (81)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:47  %INPUT_BUNDLE_load_5_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5, i32 1)
+
+ST_15: INPUT_BUNDLE_load_6_s (97)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_15: INPUT_BUNDLE_load_7_s (106)  [3/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+
+ <State 16>: 8.75ns
+ST_16: INPUT_BUNDLE_addr_5_s (82)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:23
+:48  %INPUT_BUNDLE_addr_5_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_5)
+
+ST_16: INPUT_BUNDLE_load_6_s (97)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:63  %INPUT_BUNDLE_load_6_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6, i32 1)
+
+ST_16: INPUT_BUNDLE_load_7_s (106)  [2/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+
+ <State 17>: 8.75ns
+ST_17: tmp_7 (67)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:33  %tmp_7 = zext i8 %INPUT_BUNDLE_addr_3_s to i11
+
+ST_17: tmp_14_cast (68)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:34  %tmp_14_cast = zext i8 %INPUT_BUNDLE_addr_3_s to i10
+
+ST_17: tmp_8 (75)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:41  %tmp_8 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %INPUT_BUNDLE_addr_4_s, i1 false)
+
+ST_17: tmp_16_cast (76)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:42  %tmp_16_cast = zext i9 %tmp_8 to i10
+
+ST_17: tmp_17_cast (83)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:49  %tmp_17_cast = zext i8 %INPUT_BUNDLE_addr_5_s to i10
+
+ST_17: sum1_cast (87)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:53  %sum1_cast = zext i10 %sum1 to i11
+
+ST_17: tmp_10 (88)  [1/1] 1.88ns  loc: IP_2.1_arbitrary_precision.c:23
+:54  %tmp_10 = sub i11 %tmp_7, %sum1_cast
+
+ST_17: tmp3 (89)  [1/1] 2.82ns  loc: IP_2.1_arbitrary_precision.c:23
+:55  %tmp3 = add i10 %tmp_16_cast, %tmp_17_cast
+
+ST_17: tmp3_cast (90)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:56  %tmp3_cast = zext i10 %tmp3 to i11
+
+ST_17: convulution_horizont (91)  [1/1] 1.88ns  loc: IP_2.1_arbitrary_precision.c:23
+:57  %convulution_horizont = add i11 %tmp3_cast, %tmp_10
+
+ST_17: INPUT_BUNDLE_addr_6_s (98)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:64  %INPUT_BUNDLE_addr_6_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_6)
+
+ST_17: INPUT_BUNDLE_load_7_s (106)  [1/7] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:72  %INPUT_BUNDLE_load_7_s = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7, i32 1)
+
+ST_17: sum5_neg_cast (111)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:77  %sum5_neg_cast = sext i9 %sum5_neg to i10
+
+ST_17: sum6_neg (112)  [1/1] 1.86ns  loc: IP_2.1_arbitrary_precision.c:30
+:78  %sum6_neg = add i10 %sum5_neg_cast, %tmp_14_cast
+
+ST_17: tmp_19 (113)  [1/1] 1.86ns  loc: IP_2.1_arbitrary_precision.c:30
+:79  %tmp_19 = sub i10 %sum6_neg, %tmp_17_cast
+
+
+ <State 18>: 8.75ns
+ST_18: INPUT_BUNDLE_addr_7_s (107)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:30
+:73  %INPUT_BUNDLE_addr_7_s = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %INPUT_BUNDLE_addr_7)
+
+
+ <State 19>: 3.76ns
+ST_19: tmp_14 (99)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:65  %tmp_14 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %INPUT_BUNDLE_addr_6_s, i1 false)
+
+ST_19: tmp_23_cast (100)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:66  %tmp_23_cast = zext i9 %tmp_14 to i11
+
+ST_19: tmp_18 (108)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:74  %tmp_18 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %INPUT_BUNDLE_addr_7_s, i1 false)
+
+ST_19: tmp_27_cast (109)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:75  %tmp_27_cast = zext i9 %tmp_18 to i11
+
+ST_19: tmp_28_cast (114)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:30
+:80  %tmp_28_cast = sext i10 %tmp_19 to i11
+
+ST_19: tmp_20 (115)  [1/1] 1.88ns  loc: IP_2.1_arbitrary_precision.c:30
+:81  %tmp_20 = sub i11 %tmp_28_cast, %tmp_23_cast
+
+ST_19: convulution_vertical (116)  [1/1] 1.88ns  loc: IP_2.1_arbitrary_precision.c:30
+:82  %convulution_vertical = add i11 %tmp_20, %tmp_27_cast
+
+
+ <State 20>: 6.38ns
+ST_20: tmp_23 (119)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:37
+:85  %tmp_23 = sext i11 %convulution_vertical to i20
+
+ST_20: tmp_24 (120)  [1/1] 6.38ns  loc: IP_2.1_arbitrary_precision.c:37
+:86  %tmp_24 = mul i20 %tmp_23, %tmp_23
+
+
+ <State 21>: 6.38ns
+ST_21: tmp_21 (117)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:37
+:83  %tmp_21 = sext i11 %convulution_horizont to i20
+
+ST_21: tmp_22 (118)  [1/1] 3.36ns  loc: IP_2.1_arbitrary_precision.c:37
+:84  %tmp_22 = mul i20 %tmp_21, %tmp_21
+
+ST_21: p (121)  [1/1] 3.02ns  loc: IP_2.1_arbitrary_precision.c:37
+:87  %p = add i20 %tmp_24, %tmp_22
+
+
+ <State 22>: 6.28ns
+ST_22: tmp_26 (122)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:38
+:88  %tmp_26 = zext i20 %p to i32
+
+ST_22: tmp_25 (123)  [6/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 23>: 6.28ns
+ST_23: tmp_25 (123)  [5/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 24>: 6.28ns
+ST_24: tmp_25 (123)  [4/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 25>: 6.28ns
+ST_25: tmp_25 (123)  [3/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 26>: 6.28ns
+ST_26: tmp_25 (123)  [2/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 27>: 6.28ns
+ST_27: tmp_25 (123)  [1/6] 6.28ns  loc: IP_2.1_arbitrary_precision.c:38
+:89  %tmp_25 = uitofp i32 %tmp_26 to double
+
+
+ <State 28>: 8.62ns
+ST_28: x_assign (124)  [31/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 29>: 8.62ns
+ST_29: x_assign (124)  [30/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 30>: 8.62ns
+ST_30: x_assign (124)  [29/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 31>: 8.62ns
+ST_31: x_assign (124)  [28/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 32>: 8.62ns
+ST_32: x_assign (124)  [27/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 33>: 8.62ns
+ST_33: x_assign (124)  [26/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 34>: 8.62ns
+ST_34: x_assign (124)  [25/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 35>: 8.62ns
+ST_35: x_assign (124)  [24/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 36>: 8.62ns
+ST_36: x_assign (124)  [23/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 37>: 8.62ns
+ST_37: x_assign (124)  [22/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 38>: 8.62ns
+ST_38: x_assign (124)  [21/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 39>: 8.62ns
+ST_39: x_assign (124)  [20/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 40>: 8.62ns
+ST_40: x_assign (124)  [19/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 41>: 8.62ns
+ST_41: x_assign (124)  [18/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 42>: 8.62ns
+ST_42: x_assign (124)  [17/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 43>: 8.62ns
+ST_43: x_assign (124)  [16/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 44>: 8.62ns
+ST_44: x_assign (124)  [15/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 45>: 8.62ns
+ST_45: x_assign (124)  [14/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 46>: 8.62ns
+ST_46: x_assign (124)  [13/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 47>: 8.62ns
+ST_47: x_assign (124)  [12/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 48>: 8.62ns
+ST_48: x_assign (124)  [11/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 49>: 8.62ns
+ST_49: x_assign (124)  [10/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 50>: 8.62ns
+ST_50: x_assign (124)  [9/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 51>: 8.62ns
+ST_51: x_assign (124)  [8/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 52>: 8.62ns
+ST_52: x_assign (124)  [7/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 53>: 8.62ns
+ST_53: x_assign (124)  [6/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 54>: 8.62ns
+ST_54: x_assign (124)  [5/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 55>: 8.62ns
+ST_55: x_assign (124)  [4/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 56>: 8.62ns
+ST_56: x_assign (124)  [3/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 57>: 8.62ns
+ST_57: x_assign (124)  [2/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+
+ <State 58>: 8.62ns
+ST_58: x_assign (124)  [1/31] 8.62ns  loc: IP_2.1_arbitrary_precision.c:38
+:90  %x_assign = call double @llvm.sqrt.f64(double %tmp_25)
+
+ST_58: p_Val2_s (125)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:475->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:480->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:91  %p_Val2_s = bitcast double %x_assign to i64
+
+ST_58: loc_V (126)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:477->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:480->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:92  %loc_V = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %p_Val2_s, i32 52, i32 62) nounwind
+
+ST_58: loc_V_1 (127)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:478->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:480->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:93  %loc_V_1 = trunc i64 %p_Val2_s to i52
+
+
+ <State 59>: 4.93ns
+ST_59: tmp_i_i_i_i_cast4 (130)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:96  %tmp_i_i_i_i_cast4 = zext i11 %loc_V to i12
+
+ST_59: sh_assign (131)  [1/1] 2.86ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:97  %sh_assign = add i12 -1023, %tmp_i_i_i_i_cast4
+
+ST_59: isNeg (132)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:98  %isNeg = call i1 @_ssdm_op_BitSelect.i1.i12.i32(i12 %sh_assign, i32 11)
+
+ST_59: tmp_39_i_i_i (133)  [1/1] 2.86ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:99  %tmp_39_i_i_i = sub i11 1023, %loc_V
+
+ST_59: tmp_39_i_i_i_cast (134)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:100  %tmp_39_i_i_i_cast = sext i11 %tmp_39_i_i_i to i12
+
+ST_59: sh_assign_1 (135)  [1/1] 2.07ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:101  %sh_assign_1 = select i1 %isNeg, i12 %tmp_39_i_i_i_cast, i12 %sh_assign
+
+
+ <State 60>: 6.68ns
+ST_60: tmp_9 (36)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:2  %tmp_9 = zext i20 %tmp_s to i32
+
+ST_60: tmp_i_i_i (128)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:482->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:94  %tmp_i_i_i = call i54 @_ssdm_op_BitConcatenate.i54.i1.i52.i1(i1 true, i52 %loc_V_1, i1 false)
+
+ST_60: tmp_i_i_i_cast (129)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:482->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:95  %tmp_i_i_i_cast = zext i54 %tmp_i_i_i to i121
+
+ST_60: sh_assign_1_cast (136)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38
+:102  %sh_assign_1_cast = sext i12 %sh_assign_1 to i32
+
+ST_60: tmp_40_i_i_i (137)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:103  %tmp_40_i_i_i = zext i32 %sh_assign_1_cast to i121
+
+ST_60: tmp_40_i_i_i_cast (138)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:104  %tmp_40_i_i_i_cast = zext i32 %sh_assign_1_cast to i54
+
+ST_60: tmp_41_i_i_i (139)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:105  %tmp_41_i_i_i = lshr i54 %tmp_i_i_i, %tmp_40_i_i_i_cast
+
+ST_60: tmp_42_i_i_i (140)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:106  %tmp_42_i_i_i = shl i121 %tmp_i_i_i_cast, %tmp_40_i_i_i
+
+ST_60: tmp_29 (141)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:488->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:107  %tmp_29 = call i1 @_ssdm_op_BitSelect.i1.i54.i32(i54 %tmp_41_i_i_i, i32 53)
+
+ST_60: tmp_29_cast (142)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:488->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:108  %tmp_29_cast = zext i1 %tmp_29 to i68
+
+ST_60: tmp_27 (143)  [1/1] 0.00ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:488->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (grouped into LUT with out node tmp_28)
+:109  %tmp_27 = call i68 @_ssdm_op_PartSelect.i68.i121.i32.i32(i121 %tmp_42_i_i_i, i32 53, i32 120)
+
+ST_60: tmp_28 (144)  [1/1] 4.61ns  loc: r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38 (out node of the LUT)
+:110  %tmp_28 = select i1 %isNeg, i68 %tmp_29_cast, i68 %tmp_27
+
+ST_60: tmp_30 (145)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:40
+:111  %tmp_30 = call i2 @_ssdm_op_PartSelect.i2.i68.i32.i32(i68 %tmp_28, i32 8, i32 9)
+
+ST_60: icmp (146)  [1/1] 2.07ns  loc: IP_2.1_arbitrary_precision.c:40
+:112  %icmp = icmp eq i2 %tmp_30, 0
+
+ST_60: StgValue_298 (147)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:40
+:113  br i1 %icmp, label %4, label %3
+
+ST_60: output4_sum1 (149)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:23
+:0  %output4_sum1 = add i32 %tmp_9, %output_read
+
+ST_60: OUTPUT_BUNDLE_addr (150)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:1  %OUTPUT_BUNDLE_addr = getelementptr i8* %OUTPUT_BUNDLE, i32 %output4_sum1
+
+ST_60: tmp_31 (156)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:45
+:0  %tmp_31 = trunc i68 %tmp_28 to i8
+
+ST_60: output4_sum (157)  [1/1] 3.44ns  loc: IP_2.1_arbitrary_precision.c:23
+:1  %output4_sum = add i32 %tmp_9, %output_read
+
+ST_60: OUTPUT_BUNDLE_addr_1 (158)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:23
+:2  %OUTPUT_BUNDLE_addr_1 = getelementptr i8* %OUTPUT_BUNDLE, i32 %output4_sum
+
+
+ <State 61>: 8.75ns
+ST_61: OUTPUT_BUNDLE_addr_r (151)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:2  %OUTPUT_BUNDLE_addr_r = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr, i32 1)
+
+
+ <State 62>: 8.75ns
+ST_62: StgValue_305 (152)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:3  call void @_ssdm_op_Write.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr, i8 -1, i1 true)
+
+
+ <State 63>: 8.75ns
+ST_63: OUTPUT_BUNDLE_addr_r_1 (153)  [5/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:4  %OUTPUT_BUNDLE_addr_r_1 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr)
+
+
+ <State 64>: 8.75ns
+ST_64: OUTPUT_BUNDLE_addr_r_1 (153)  [4/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:4  %OUTPUT_BUNDLE_addr_r_1 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr)
+
+
+ <State 65>: 8.75ns
+ST_65: OUTPUT_BUNDLE_addr_r_1 (153)  [3/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:4  %OUTPUT_BUNDLE_addr_r_1 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr)
+
+
+ <State 66>: 8.75ns
+ST_66: OUTPUT_BUNDLE_addr_r_1 (153)  [2/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:4  %OUTPUT_BUNDLE_addr_r_1 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr)
+
+
+ <State 67>: 8.75ns
+ST_67: OUTPUT_BUNDLE_addr_r_1 (153)  [1/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:41
+:4  %OUTPUT_BUNDLE_addr_r_1 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr)
+
+ST_67: StgValue_311 (154)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:43
+:5  br label %5
+
+ST_67: OUTPUT_BUNDLE_addr_1_2 (161)  [1/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:5  %OUTPUT_BUNDLE_addr_1_2 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1)
+
+ST_67: StgValue_313 (162)  [1/1] 0.00ns
+:6  br label %5
+
+ST_67: i_1 (164)  [1/1] 2.84ns  loc: IP_2.1_arbitrary_precision.c:22
+:0  %i_1 = add i10 %i, 1
+
+ST_67: StgValue_315 (165)  [1/1] 0.00ns  loc: IP_2.1_arbitrary_precision.c:22
+:1  br label %.preheader
+
+
+ <State 68>: 8.75ns
+ST_68: OUTPUT_BUNDLE_addr_1_1 (159)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:3  %OUTPUT_BUNDLE_addr_1_1 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1, i32 1)
+
+
+ <State 69>: 8.75ns
+ST_69: StgValue_317 (160)  [1/1] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:4  call void @_ssdm_op_Write.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1, i8 %tmp_31, i1 true)
+
+
+ <State 70>: 8.75ns
+ST_70: OUTPUT_BUNDLE_addr_1_2 (161)  [5/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:5  %OUTPUT_BUNDLE_addr_1_2 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1)
+
+
+ <State 71>: 8.75ns
+ST_71: OUTPUT_BUNDLE_addr_1_2 (161)  [4/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:5  %OUTPUT_BUNDLE_addr_1_2 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1)
+
+
+ <State 72>: 8.75ns
+ST_72: OUTPUT_BUNDLE_addr_1_2 (161)  [3/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:5  %OUTPUT_BUNDLE_addr_1_2 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1)
+
+
+ <State 73>: 8.75ns
+ST_73: OUTPUT_BUNDLE_addr_1_2 (161)  [2/5] 8.75ns  loc: IP_2.1_arbitrary_precision.c:45
+:5  %OUTPUT_BUNDLE_addr_1_2 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %OUTPUT_BUNDLE_addr_1)
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('j') with incoming values : ('j', IP_2.1_arbitrary_precision.c:21) [17]  (1.77 ns)
+
+ <State 2>: 3.08ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', IP_2.1_arbitrary_precision.c:21) [17]  (0 ns)
+	'add' operation ('tmp_4', IP_2.1_arbitrary_precision.c:30) [25]  (3.08 ns)
+
+ <State 3>: 6.52ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', IP_2.1_arbitrary_precision.c:22) [29]  (0 ns)
+	'add' operation ('sum2', IP_2.1_arbitrary_precision.c:21) [38]  (3.08 ns)
+	'add' operation ('input2_sum', IP_2.1_arbitrary_precision.c:21) [40]  (3.44 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [42]  (8.75 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [43]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [51]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [59]  (8.75 ns)
+
+ <State 14>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [66]  (8.75 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [74]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:23) [82]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:30) [98]  (8.75 ns)
+
+ <State 18>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'INPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:30) [107]  (8.75 ns)
+
+ <State 19>: 3.76ns
+The critical path consists of the following:
+	'sub' operation ('tmp_20', IP_2.1_arbitrary_precision.c:30) [115]  (1.88 ns)
+	'add' operation ('convulution_vertical', IP_2.1_arbitrary_precision.c:30) [116]  (1.88 ns)
+
+ <State 20>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('tmp_24', IP_2.1_arbitrary_precision.c:37) [120]  (6.38 ns)
+
+ <State 21>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('tmp_22', IP_2.1_arbitrary_precision.c:37) [118]  (3.36 ns)
+	'add' operation ('p', IP_2.1_arbitrary_precision.c:37) [121]  (3.02 ns)
+
+ <State 22>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 23>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 24>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 25>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 26>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 27>: 6.28ns
+The critical path consists of the following:
+	'uitodp' operation ('tmp_25', IP_2.1_arbitrary_precision.c:38) [123]  (6.28 ns)
+
+ <State 28>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 29>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 30>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 31>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 32>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 33>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 34>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 35>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 36>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 37>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 38>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 39>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 40>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 41>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 42>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 43>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 44>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 45>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 46>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 47>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 48>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 49>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 50>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 51>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 52>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 53>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 54>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 55>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 56>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 57>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 58>: 8.62ns
+The critical path consists of the following:
+	'dsqrt' operation ('x', IP_2.1_arbitrary_precision.c:38) [124]  (8.62 ns)
+
+ <State 59>: 4.93ns
+The critical path consists of the following:
+	'add' operation ('sh', r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38) [131]  (2.86 ns)
+	'select' operation ('sh', r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38) [135]  (2.07 ns)
+
+ <State 60>: 6.68ns
+The critical path consists of the following:
+	'lshr' operation ('tmp_41_i_i_i', r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38) [139]  (0 ns)
+	'select' operation ('tmp_28', r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:485->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/hls/hls_round.h:523->r:/builds/2017.1/nightly/2017_04_14_1846317/src/products/hls/hls_lib/src/lib_floatconversion.cpp:60->IP_2.1_arbitrary_precision.c:38) [144]  (4.61 ns)
+	'icmp' operation ('icmp', IP_2.1_arbitrary_precision.c:40) [146]  (2.07 ns)
+
+ <State 61>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [151]  (8.75 ns)
+
+ <State 62>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [152]  (8.75 ns)
+
+ <State 63>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [153]  (8.75 ns)
+
+ <State 64>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [153]  (8.75 ns)
+
+ <State 65>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [153]  (8.75 ns)
+
+ <State 66>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [153]  (8.75 ns)
+
+ <State 67>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:41) [153]  (8.75 ns)
+
+ <State 68>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [159]  (8.75 ns)
+
+ <State 69>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [160]  (8.75 ns)
+
+ <State 70>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [161]  (8.75 ns)
+
+ <State 71>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [161]  (8.75 ns)
+
+ <State 72>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [161]  (8.75 ns)
+
+ <State 73>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'OUTPUT_BUNDLE' (IP_2.1_arbitrary_precision.c:45) [161]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

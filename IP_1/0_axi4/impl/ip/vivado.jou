@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sun Jun 11 23:54:19 2017
+# Process ID: 8732
+# Current directory: C:/Embedded_Systems_Sobel_Filter_HLS/IP_1/0_axi4/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/Embedded_Systems_Sobel_Filter_HLS/IP_1/0_axi4/impl/ip/vivado.log
+# Journal file: C:/Embedded_Systems_Sobel_Filter_HLS/IP_1/0_axi4/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

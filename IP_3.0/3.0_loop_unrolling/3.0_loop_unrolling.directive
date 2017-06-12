@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile>
+    <directive functionName="sobel" label="Convulution_row" functionLabel="">
+      <pragma name="UNROLL">
+        <option name="factor" value="26"/>
+      </pragma>
+    </directive>
+    <directive functionName="sobel" label="Convulution_row" functionLabel="">
+      <pragma name="PIPELINE">
+        <option name="rewind" value=" " positionalBoolean="1"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

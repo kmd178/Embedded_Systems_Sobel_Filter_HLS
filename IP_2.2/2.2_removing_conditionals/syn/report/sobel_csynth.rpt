@@ -1,0 +1,336 @@
+
+
+================================================================
+== Vivado HLS Report for 'sobel'
+================================================================
+* Date:           Mon Jun 12 03:10:07 2017
+
+* Version:        2017.1 (Build 1846317 on Fri Apr 14 19:19:38 MDT 2017)
+* Project:        IP_2.2
+* Solution:       2.2_removing_conditionals
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+----------+----------+----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |    min   |    max   |    min   |    max   |   Type  |
+    +----------+----------+----------+----------+---------+
+    |  62676195|  62676195|  62676196|  62676196|   none  |
+    +----------+----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+        |             |       Latency       | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |    min   |    max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  62676194|  62676194|     61327|          -|          -|  1022|    no    |
+        | + Loop 1.1  |     61320|     61320|        60|          -|          -|  1022|    no    |
+        +-------------+----------+----------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      2|       -|      -|
+|Expression       |        -|      -|     420|   1448|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        4|      0|    3452|   4393|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    439|
+|Register         |        -|      -|     764|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        4|      2|    4636|   6280|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        1|   ~0  |       4|     11|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+---------------------------+---------+-------+------+------+
+    |           Instance          |           Module          | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-----------------------------+---------------------------+---------+-------+------+------+
+    |sobel_AXILiteS_s_axi_U       |sobel_AXILiteS_s_axi       |        0|      0|   112|   168|
+    |sobel_INPUT_BUNDLE_m_axi_U   |sobel_INPUT_BUNDLE_m_axi   |        2|      0|   548|   700|
+    |sobel_OUTPUT_BUNDLE_m_axi_U  |sobel_OUTPUT_BUNDLE_m_axi  |        2|      0|   548|   700|
+    |sobel_dsqrt_64ns_cud_U1      |sobel_dsqrt_64ns_cud       |        0|      0|  1832|  2180|
+    |sobel_uitodp_32nsbkb_U0      |sobel_uitodp_32nsbkb       |        0|      0|   412|   645|
+    +-----------------------------+---------------------------+---------+-------+------+------+
+    |Total                        |                           |        4|      0|  3452|  4393|
+    +-----------------------------+---------------------------+---------+-------+------+------+
+
+    * DSP48: 
+    +-------------------------+----------------------+--------------+
+    |         Instance        |        Module        |  Expression  |
+    +-------------------------+----------------------+--------------+
+    |sobel_mac_muladd_eOg_U3  |sobel_mac_muladd_eOg  | i0 + i1 * i1 |
+    |sobel_mul_mul_11sdEe_U2  |sobel_mul_mul_11sdEe  |    i0 * i0   |
+    +-------------------------+----------------------+--------------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------------+----------+-------+-----+-----+------------+------------+
+    |          Variable Name         | Operation| DSP48E|  FF | LUT | Bitwidth P0| Bitwidth P1|
+    +--------------------------------+----------+-------+-----+-----+------------+------------+
+    |convulution_horizont_fu_585_p2  |     +    |      0|    0|   11|          11|          11|
+    |convulution_vertical_fu_639_p2  |     +    |      0|    0|   11|          11|          11|
+    |i_1_fu_488_p2                   |     +    |      0|    0|   17|           1|          10|
+    |input2_sum1_fu_445_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum2_fu_477_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum5_fu_330_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum6_fu_351_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum7_fu_372_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum8_fu_392_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum9_fu_413_p2           |     +    |      0|    0|   39|          32|          32|
+    |input2_sum_fu_301_p2            |     +    |      0|    0|   39|          32|          32|
+    |j_1_fu_494_p2                   |     +    |      0|    0|   17|          10|           1|
+    |output4_sum_fu_228_p2           |     +    |      0|    0|   39|          32|          32|
+    |sh_assign_fu_676_p2             |     +    |      0|    0|   19|          11|          12|
+    |sum1_fu_530_p2                  |     +    |      0|    0|   17|          10|          10|
+    |sum2_fu_291_p2                  |     +    |      0|    0|   28|          12|          21|
+    |sum3_fu_383_p2                  |     +    |      0|    0|   28|          21|          21|
+    |sum5_fu_403_p2                  |     +    |      0|    0|   28|          11|          21|
+    |sum6_fu_341_p2                  |     +    |      0|    0|   28|          10|          21|
+    |sum6_neg_fu_594_p2              |     +    |      0|    0|   11|          10|          10|
+    |sum8_fu_362_p2                  |     +    |      0|    0|   28|          11|          21|
+    |tmp1_fu_312_p2                  |     +    |      0|    0|   17|           2|          10|
+    |tmp2_fu_520_p2                  |     +    |      0|    0|   16|           9|           9|
+    |tmp3_fu_575_p2                  |     +    |      0|    0|   17|          10|          10|
+    |tmp_4_fu_257_p2                 |     +    |      0|    0|   27|          20|          11|
+    |tmp_5_fu_263_p2                 |     +    |      0|    0|   27|          20|          12|
+    |sum5_neg_fu_536_p2              |     -    |      0|    0|   16|           9|           9|
+    |tmp_11_fu_569_p2                |     -    |      0|    0|   11|          11|          11|
+    |tmp_20_fu_600_p2                |     -    |      0|    0|   11|          10|          10|
+    |tmp_21_fu_633_p2                |     -    |      0|    0|   11|          11|          11|
+    |tmp_40_i_i_i_fu_690_p2          |     -    |      0|    0|   18|          10|          11|
+    |icmp_fu_782_p2                  |   icmp   |      0|    0|    1|           2|           1|
+    |tmp_6_fu_269_p2                 |   icmp   |      0|    0|    5|          10|           2|
+    |tmp_fu_210_p2                   |   icmp   |      0|    0|    5|          10|           2|
+    |tmp_42_i_i_i_fu_731_p2          |   lshr   |      0|  143|  162|          54|          54|
+    |tmp_3_fu_247_p2                 |    or    |      0|    0|   20|          20|           1|
+    |sh_assign_1_fu_699_p3           |  select  |      0|    0|   12|           1|          12|
+    |tmp_29_fu_765_p3                |  select  |      0|    0|   68|           1|          68|
+    |tmp_30_fu_792_p3                |  select  |      0|    0|    8|           1|           2|
+    |tmp_43_i_i_i_fu_737_p2          |    shl   |      0|  277|  402|         121|         121|
+    +--------------------------------+----------+-------+-----+-----+------------+------------+
+    |Total                           |          |      0|  420| 1448|         749|         825|
+    +--------------------------------+----------+-------+-----+-----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |                 Name                 | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |INPUT_BUNDLE_ARADDR                   |   44|          9|   32|        288|
+    |INPUT_BUNDLE_blk_n_AR                 |    9|          2|    1|          2|
+    |INPUT_BUNDLE_blk_n_R                  |    9|          2|    1|          2|
+    |OUTPUT_BUNDLE_blk_n_AW                |    9|          2|    1|          2|
+    |OUTPUT_BUNDLE_blk_n_B                 |    9|          2|    1|          2|
+    |OUTPUT_BUNDLE_blk_n_W                 |    9|          2|    1|          2|
+    |ap_NS_fsm                             |  305|         68|    1|         68|
+    |ap_sig_ioackin_INPUT_BUNDLE_ARREADY   |    9|          2|    1|          2|
+    |ap_sig_ioackin_OUTPUT_BUNDLE_AWREADY  |    9|          2|    1|          2|
+    |ap_sig_ioackin_OUTPUT_BUNDLE_WREADY   |    9|          2|    1|          2|
+    |i_reg_179                             |    9|          2|   10|         20|
+    |j_reg_167                             |    9|          2|   10|         20|
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |Total                                 |  439|         97|   61|        412|
+    +--------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |INPUT_BUNDLE_addr_1_reg_860           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_2_reg_866           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_3_reg_872           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_4_reg_878           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_5_reg_884           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_6_reg_890           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_7_reg_896           |  32|   0|   32|          0|
+    |INPUT_BUNDLE_addr_reg_854             |  32|   0|   32|          0|
+    |OUTPUT_BUNDLE_addr_reg_831            |  32|   0|   32|          0|
+    |ap_CS_fsm                             |  67|   0|   67|          0|
+    |ap_reg_ioackin_INPUT_BUNDLE_ARREADY   |   1|   0|    1|          0|
+    |ap_reg_ioackin_OUTPUT_BUNDLE_AWREADY  |   1|   0|    1|          0|
+    |ap_reg_ioackin_OUTPUT_BUNDLE_WREADY   |   1|   0|    1|          0|
+    |convulution_horizont_reg_922          |  11|   0|   11|          0|
+    |convulution_vertical_reg_932          |  11|   0|   11|          0|
+    |i_1_reg_902                           |  10|   0|   10|          0|
+    |i_reg_179                             |  10|   0|   10|          0|
+    |icmp_reg_978                          |   1|   0|    1|          0|
+    |input_read_reg_816                    |  32|   0|   32|          0|
+    |isNeg_reg_968                         |   1|   0|    1|          0|
+    |j_1_reg_907                           |  10|   0|   10|          0|
+    |j_reg_167                             |  10|   0|   10|          0|
+    |loc_V_1_reg_963                       |  52|   0|   52|          0|
+    |loc_V_reg_957                         |  11|   0|   11|          0|
+    |output_read_reg_811                   |  32|   0|   32|          0|
+    |p_reg_942                             |  20|   0|   20|          0|
+    |reg_198                               |   8|   0|    8|          0|
+    |reg_202                               |   8|   0|    8|          0|
+    |reg_206                               |   8|   0|    8|          0|
+    |sh_assign_1_reg_973                   |  12|   0|   12|          0|
+    |sum1_reg_912                          |  10|   0|   10|          0|
+    |sum5_neg_reg_917                      |   9|   0|    9|          0|
+    |tmp_20_reg_927                        |  10|   0|   10|          0|
+    |tmp_25_reg_937                        |  20|   0|   20|          0|
+    |tmp_27_reg_952                        |  64|   0|   64|          0|
+    |tmp_30_reg_988                        |   8|   0|    8|          0|
+    |tmp_33_reg_983                        |   8|   0|    8|          0|
+    |tmp_3_cast_reg_836                    |  10|   0|   21|         11|
+    |tmp_4_reg_841                         |  10|   0|   20|         10|
+    |tmp_5_reg_846                         |  10|   0|   20|         10|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 | 764|   0|  795|         31|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+---------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------------+-----+-----+------------+---------------+--------------+
+|s_axi_AXILiteS_AWVALID        |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_AWREADY        | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_AWADDR         |  in |    5|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WVALID         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WREADY         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WDATA          |  in |   32|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WSTRB          |  in |    4|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARVALID        |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARREADY        | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARADDR         |  in |    5|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RVALID         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RREADY         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RDATA          | out |   32|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RRESP          | out |    2|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BVALID         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BREADY         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BRESP          | out |    2|    s_axi   |    AXILiteS   |    scalar    |
+|ap_clk                        |  in |    1| ap_ctrl_hs |     sobel     | return value |
+|ap_rst_n                      |  in |    1| ap_ctrl_hs |     sobel     | return value |
+|interrupt                     | out |    1| ap_ctrl_hs |     sobel     | return value |
+|m_axi_INPUT_BUNDLE_AWVALID    | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWREADY    |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWADDR     | out |   32|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWID       | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWLEN      | out |    8|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWSIZE     | out |    3|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWBURST    | out |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWLOCK     | out |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWCACHE    | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWPROT     | out |    3|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWQOS      | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWREGION   | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_AWUSER     | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WVALID     | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WREADY     |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WDATA      | out |   32|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WSTRB      | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WLAST      | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WID        | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_WUSER      | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARVALID    | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARREADY    |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARADDR     | out |   32|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARID       | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARLEN      | out |    8|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARSIZE     | out |    3|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARBURST    | out |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARLOCK     | out |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARCACHE    | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARPROT     | out |    3|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARQOS      | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARREGION   | out |    4|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_ARUSER     | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RVALID     |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RREADY     | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RDATA      |  in |   32|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RLAST      |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RID        |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RUSER      |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_RRESP      |  in |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_BVALID     |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_BREADY     | out |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_BRESP      |  in |    2|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_BID        |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_INPUT_BUNDLE_BUSER      |  in |    1|    m_axi   |  INPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWVALID   | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWREADY   |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWADDR    | out |   32|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWID      | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWLEN     | out |    8|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWSIZE    | out |    3|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWBURST   | out |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWLOCK    | out |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWCACHE   | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWPROT    | out |    3|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWQOS     | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWREGION  | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_AWUSER    | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WVALID    | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WREADY    |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WDATA     | out |   32|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WSTRB     | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WLAST     | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WID       | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_WUSER     | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARVALID   | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARREADY   |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARADDR    | out |   32|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARID      | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARLEN     | out |    8|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARSIZE    | out |    3|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARBURST   | out |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARLOCK    | out |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARCACHE   | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARPROT    | out |    3|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARQOS     | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARREGION  | out |    4|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_ARUSER    | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RVALID    |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RREADY    | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RDATA     |  in |   32|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RLAST     |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RID       |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RUSER     |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_RRESP     |  in |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_BVALID    |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_BREADY    | out |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_BRESP     |  in |    2|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_BID       |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
+|m_axi_OUTPUT_BUNDLE_BUSER     |  in |    1|    m_axi   | OUTPUT_BUNDLE |    pointer   |
++------------------------------+-----+-----+------------+---------------+--------------+
+

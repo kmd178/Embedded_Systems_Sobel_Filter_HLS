@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="IP_2.1_arbitrary_precision.c" path="C:\Embedded_Systems_Sobel_Filter_HLS\IP_2.1_arbitrary_precision.c"/>
+  </source>
+  <testbench>
+    <originFiles name="testbench.c" path="C:\Embedded_Systems_Sobel_Filter_HLS\testbench.c"/>
+    <originFiles name="input.grey" path="C:\Embedded_Systems_Sobel_Filter_HLS\input.grey"/>
+    <originFiles name="golden.grey" path="C:\Embedded_Systems_Sobel_Filter_HLS\golden.grey"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
